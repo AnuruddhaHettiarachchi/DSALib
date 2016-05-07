@@ -5,6 +5,7 @@
 #include "Datastructs\stack.cpp"
 #include "Datastructs\queue.cpp"
 #include "Datastructs\tree.cpp"
+#include "MiscAlgo\permucombi.h"
 
 using namespace std;
 using namespace sorting;
@@ -13,8 +14,12 @@ using namespace datastruct;
 
 int main()
 {
-	
-	NodeTree<int> tree;
-	tree.root();
+	vector<char> choises;
+	choises.push_back('a');
+	choises.push_back('b');
+	choises.push_back('c');
+	choises.push_back('d');
+	choises.push_back('e');
+	printAllCombi<char>(choises, 3, true);
 	//cout << s.getTop() << endl;
 }

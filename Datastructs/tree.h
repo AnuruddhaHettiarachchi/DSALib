@@ -73,3 +73,8 @@ private:
 	Node* parent;
 	list<Node*> children;
 };
+
+//Binary tree
+//Complete Binary Tree
+//Heap
+//PriorityQueue

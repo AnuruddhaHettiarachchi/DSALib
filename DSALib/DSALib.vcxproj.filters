@@ -50,5 +50,8 @@
     <ClInclude Include="..\Datastructs\tree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\MiscAlgo\permucombi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

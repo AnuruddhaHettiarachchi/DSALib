@@ -158,6 +158,7 @@
     <ClInclude Include="..\Datastructs\queue.h" />
     <ClInclude Include="..\Datastructs\stack.h" />
     <ClInclude Include="..\Datastructs\tree.h" />
+    <ClInclude Include="..\MiscAlgo\permucombi.h" />
     <ClInclude Include="..\Sorting\sorting.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
