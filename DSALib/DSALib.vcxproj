@@ -158,6 +158,8 @@
     <ClInclude Include="..\Datastructs\queue.h" />
     <ClInclude Include="..\Datastructs\stack.h" />
     <ClInclude Include="..\Datastructs\tree.h" />
+    <ClInclude Include="..\MiscAlgo\array_algos.h" />
+    <ClInclude Include="..\MiscAlgo\list_algos.h" />
     <ClInclude Include="..\MiscAlgo\permucombi.h" />
     <ClInclude Include="..\Sorting\sorting.h" />
   </ItemGroup>

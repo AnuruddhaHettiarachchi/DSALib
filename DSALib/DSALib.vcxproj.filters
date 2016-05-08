@@ -31,7 +31,7 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\Datastructs\tree.cpp">
-      <Filter>Header Files</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -51,6 +51,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\MiscAlgo\permucombi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MiscAlgo\array_algos.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MiscAlgo\list_algos.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
