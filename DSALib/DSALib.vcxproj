@@ -159,8 +159,11 @@
     <ClInclude Include="..\Datastructs\stack.h" />
     <ClInclude Include="..\Datastructs\tree.h" />
     <ClInclude Include="..\MiscAlgo\array_algos.h" />
+    <ClInclude Include="..\MiscAlgo\bit_manipulator.h" />
+    <ClInclude Include="..\MiscAlgo\graph_tree_algos.h" />
     <ClInclude Include="..\MiscAlgo\list_algos.h" />
     <ClInclude Include="..\MiscAlgo\permucombi.h" />
+    <ClInclude Include="..\MiscAlgo\stack_queue_algos.h" />
     <ClInclude Include="..\Sorting\sorting.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

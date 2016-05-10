@@ -59,5 +59,14 @@
     <ClInclude Include="..\MiscAlgo\list_algos.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\MiscAlgo\stack_queue_algos.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MiscAlgo\graph_tree_algos.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MiscAlgo\bit_manipulator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
