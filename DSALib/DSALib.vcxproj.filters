@@ -68,5 +68,11 @@
     <ClInclude Include="..\MiscAlgo\bit_manipulator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\MiscAlgo\math_problems.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MiscAlgo\recursion_dp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

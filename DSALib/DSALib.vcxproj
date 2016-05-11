@@ -162,7 +162,9 @@
     <ClInclude Include="..\MiscAlgo\bit_manipulator.h" />
     <ClInclude Include="..\MiscAlgo\graph_tree_algos.h" />
     <ClInclude Include="..\MiscAlgo\list_algos.h" />
+    <ClInclude Include="..\MiscAlgo\math_problems.h" />
     <ClInclude Include="..\MiscAlgo\permucombi.h" />
+    <ClInclude Include="..\MiscAlgo\recursion_dp.h" />
     <ClInclude Include="..\MiscAlgo\stack_queue_algos.h" />
     <ClInclude Include="..\Sorting\sorting.h" />
   </ItemGroup>
