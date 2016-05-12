@@ -165,6 +165,7 @@
     <ClInclude Include="..\MiscAlgo\math_problems.h" />
     <ClInclude Include="..\MiscAlgo\permucombi.h" />
     <ClInclude Include="..\MiscAlgo\recursion_dp.h" />
+    <ClInclude Include="..\MiscAlgo\searching_sorting_algos.h" />
     <ClInclude Include="..\MiscAlgo\stack_queue_algos.h" />
     <ClInclude Include="..\Sorting\sorting.h" />
   </ItemGroup>

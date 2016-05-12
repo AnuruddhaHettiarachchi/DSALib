@@ -14,6 +14,7 @@
 #include "MiscAlgo\bit_manipulator.h"
 #include "MiscAlgo\\math_problems.h"
 #include "MiscAlgo\recursion_dp.h"
+#include "MiscAlgo\searching_sorting_algos.h"
 
 using namespace std;
 using namespace sorting;
@@ -23,11 +24,11 @@ using namespace datastruct;
 int main()
 {
 	
-	cout << hopPatternCount(5) << endl;
-	
-//	while (i != l.end())
-//	{
-//		cout << *i++ << endl;
-//	}
+	vector<int> a = {1, 3, 5, 7, 9, 0, 0, 0, 0, 0};
+	vector<int> b = {0, 2, 4, 6, 8};
 
+	mergeArrays(a, b, 5, 5);
+
+	for (int i : a)
+		cout << i << " ";
 }

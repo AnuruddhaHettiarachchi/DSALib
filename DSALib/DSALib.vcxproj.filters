@@ -35,9 +35,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Sorting\sorting.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\Datastructs\queue.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -72,6 +69,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\MiscAlgo\recursion_dp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sorting\sorting.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MiscAlgo\searching_sorting_algos.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

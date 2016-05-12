@@ -22,3 +22,22 @@ bool isUnique(vector<T>& ar)
 		return true;
 	}
 }
+
+template<typename T>
+int binarySearch(const vector<T>& ar, const T& val, int start, int end)
+{
+	int index = -1;
+	if (start < end)
+	{
+		int middle = (start + end) / 2;
+		if (ar[middle] == val)
+			index = middle;
+		else if (ar[middle] > val)
+			index = binarySearch(ar, val, start, middle);
+		else
+			index = binarySearch(ar, val, middle + 1, end);
+	}
+	return index;
+
+}
+
