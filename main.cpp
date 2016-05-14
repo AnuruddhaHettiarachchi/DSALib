@@ -1,5 +1,7 @@
 #include <iostream>
 #include <list>
+#include <thread>
+#include <algorithm>
 
 #include "Sorting\sorting.cpp"
 #include "Datastructs\list.cpp"
@@ -15,20 +17,17 @@
 #include "MiscAlgo\\math_problems.h"
 #include "MiscAlgo\recursion_dp.h"
 #include "MiscAlgo\searching_sorting_algos.h"
+#include "MiscAlgo\threads.h"
 
 using namespace std;
 using namespace sorting;
 using namespace datastruct;
 
-
 int main()
 {
-	
-	vector<int> a = {1, 3, 5, 7, 9, 0, 0, 0, 0, 0};
-	vector<int> b = {0, 2, 4, 6, 8};
+	string a = "hello";
 
-	mergeArrays(a, b, 5, 5);
+	for_each(a.begin(), a.end(), toupper);
 
-	for (int i : a)
-		cout << i << " ";
+	cout << a.c_str() << endl;
 }

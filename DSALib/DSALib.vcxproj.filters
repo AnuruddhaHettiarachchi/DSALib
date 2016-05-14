@@ -77,5 +77,8 @@
     <ClInclude Include="..\MiscAlgo\searching_sorting_algos.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\MiscAlgo\threads.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

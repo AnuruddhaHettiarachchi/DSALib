@@ -167,6 +167,7 @@
     <ClInclude Include="..\MiscAlgo\recursion_dp.h" />
     <ClInclude Include="..\MiscAlgo\searching_sorting_algos.h" />
     <ClInclude Include="..\MiscAlgo\stack_queue_algos.h" />
+    <ClInclude Include="..\MiscAlgo\threads.h" />
     <ClInclude Include="..\Sorting\sorting.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
