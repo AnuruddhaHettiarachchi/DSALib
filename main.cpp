@@ -19,15 +19,24 @@
 #include "MiscAlgo\searching_sorting_algos.h"
 #include "MiscAlgo\threads.h"
 
+#include <queue>
+#include <vector>
+
 using namespace std;
 using namespace sorting;
 using namespace datastruct;
 
+bool func(const int a, const int b) { return a > b; }
+
 int main()
 {
-	string a = "hello";
+	function<bool(int,int)> f = func;
+	priority_queue<int, vector<int>, decltype(f)> q;
+	q.push(8);
+	q.push(5);
+	q.push(2);
+	q.push(1);
 
-	for_each(a.begin(), a.end(), toupper);
+	cout << q.top() << endl;
 
-	cout << a.c_str() << endl;
 }

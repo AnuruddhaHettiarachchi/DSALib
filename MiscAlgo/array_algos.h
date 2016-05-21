@@ -41,3 +41,40 @@ int binarySearch(const vector<T>& ar, const T& val, int start, int end)
 
 }
 
+double convert(const string& str)
+{
+	string s = str;
+	bool isPositive = true;
+	double num = 0;
+	unsigned int dpIndex = s.size();
+
+	if (s[0] == '-')
+	{
+		isPositive = false;
+		s = str.substr(1);
+	}
+
+	for (unsigned int i = 0; i < s.size(); i++)
+	{
+		if (s[i] == '.')
+		{
+			dpIndex = i;
+			break;
+		}
+	}
+
+	for (unsigned int i = 0; i < s.size(); i++)
+	{
+		if (i < dpIndex)
+		{
+			num += (s[i] - '0') * pow(10, (dpIndex - i - 1));
+		}
+		if (i > dpIndex)
+		{
+			num += (s[i] - '0') * pow(10, (dpIndex - i));
+		}
+	}
+	if (!isPositive)
+		num = -num;
+	return num;
+}
