@@ -1,6 +1,7 @@
 #pragma once
 
 #include <vector>
+#include <stack>
 #include <iostream>
 
 using namespace std;
@@ -95,4 +96,43 @@ T threeStack<T>::top(int s)
 	{
 		return ar[_top[s]];
 	}
+}
+
+class minStack {
+public:
+	minStack() : topIndex(0) {}
+	void push(int val);
+	int pop();
+	int min() const;
+private:
+	vector<int> valStack;
+	stack<int> iStack;
+	int topIndex;
+};
+
+void minStack::push(int val)
+{
+	if(valStack.size() <= topIndex)
+		valStack.push_back(0);
+	valStack[topIndex] = val;
+	if (iStack.empty() || valStack[iStack.top()] > val)
+		iStack.push(topIndex);
+	topIndex++;
+}
+
+int minStack::pop()
+{
+	if (topIndex == 0)
+		throw "Empty stack";
+	topIndex--;
+	if (topIndex == iStack.top())
+		iStack.pop();
+	return valStack[topIndex];
+}
+
+int minStack::min() const
+{
+	if (topIndex == 0)
+		throw "Empty stack";
+	return valStack[iStack.top()];
 }

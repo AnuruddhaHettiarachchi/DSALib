@@ -1,6 +1,7 @@
 #pragma once
 #include <unordered_map>
 #include <vector>
+#include <string>
 
 using namespace std;
 
@@ -77,4 +78,27 @@ double convert(const string& str)
 	if (!isPositive)
 		num = -num;
 	return num;
+}
+
+void replaceSpace(string& str, int n)
+{
+	int dist = str.length() - n;
+	for (int i = n - 1; i >= 0; i--)
+	{
+		str[i + dist] = str[i];
+	}
+	int i = 0;
+	for (int j = dist; j < str.length(); j++)
+	{
+		if (str[j] != ' ')
+		{
+			str[i] = str[j];
+			i++;
+		}
+		else
+		{
+			str[i] = '%'; str[i + 1] = '2'; str[i + 2] = '0';
+			i += 3;
+		}
+	}
 }

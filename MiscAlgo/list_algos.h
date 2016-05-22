@@ -22,3 +22,30 @@ void removeDups(list<T>& l)
 		}
 	}
 }
+
+typedef list<int>::iterator it;
+
+void swapCW(it i, it j)
+{
+	if (i != j)
+	{
+		int temp = *i;
+		*i = *j;
+		*j = temp;
+	}
+}
+
+void partition(list<int>& l, int x)
+{
+	it current, wall;
+	current = wall = l.begin();
+	while (current != l.end())
+	{
+		if (*current < x)
+		{
+			swapCW(current, wall);
+			wall++;
+		}
+		current++;
+	}
+}
