@@ -54,3 +54,28 @@ int insertBetween(int m, int n, int j, int i)
 	n = n & mask;
 	return m | n;
 }
+
+void printBin(double num)
+{
+	if (num <= 0 || num >= 1)
+		cout << "ERROR" << endl;
+	else
+	{
+		string digits;
+		double temp = num;
+		int wholeNum;
+		for (int i = 0; i<32; i++)
+		{
+			wholeNum = (int)(temp * 2);
+			digits.append(to_string(wholeNum));
+			temp = (temp * 2) - wholeNum;
+			if (temp == 0)
+				break;
+		}
+		if (temp != 0)
+			cout << "ERROR" << endl;
+		else
+			cout << digits << endl;
+	}
+}
+

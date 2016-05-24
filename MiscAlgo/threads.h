@@ -55,3 +55,30 @@ private:
 	int n;
 	vector<mutex> sticks;
 };
+
+/* For deadlock avoidance
+* Exception thown if a function requests mutexes in non-increasing order
+*/
+class MutexFactory {
+public:
+	static MutexFactory& getInstance() { static MutexFactory mf; return mf; }
+	mutex& getMutex(string uid, int muid);
+private:
+	MutexFactory() { cout << "constr"; }
+	mutex mus[5];
+	unordered_map<string, int> currentMax;
+};
+
+mutex& MutexFactory::getMutex(string uid, int muid)
+{
+	int muidx = muid + 1;
+	if (currentMax[uid] < muidx)
+	{
+		currentMax[uid] = muidx;
+		return mus[muid];
+	}
+	else
+	{
+		throw "Possible Deadlok";
+	}
+}
