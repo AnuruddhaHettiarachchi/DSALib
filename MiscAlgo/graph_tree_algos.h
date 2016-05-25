@@ -53,3 +53,54 @@ bool balanced(binaryTree<T>& t)
 	height<T>(i, balanced);
 	return balanced;
 }
+
+/*
+// ............... graph sum ................ //
+//cannot test until btree implementation
+
+typedef btree::node node;
+queue<node> q;
+unordered_map<node, bool> m;
+
+void printPath(list<node>& path)
+{
+	for (node n : path)
+	{
+		cout << n.value() << " ";
+	}
+	cout << endl;
+}
+
+void searchFrom(node n, int pSum, int sum, list<node>& path)
+{
+	for (node child : n.children())
+	{
+		if (!m[child])
+		{
+			q.push(child);
+			m[child] = true;
+		}
+		list<node> newPath = path;
+		newPath.push_back(child);
+		int newPSum = pSum + child.value();
+		if (newPSum == sum)
+			printPath(newPath);
+		searchFrom(child, newPSum, sum, newPath);
+	}
+}
+
+void printSumPath(const btree& tr, int sum)
+{
+	q.push(tr.root());
+	while (!q.empty())
+	{
+		node n = q.front();
+		q.pop();
+		int pSum = n.value();
+		list<node> path;
+		path.push_back(n);
+		searchFrom(n, pSum, sum, path);
+	}
+}
+
+*/

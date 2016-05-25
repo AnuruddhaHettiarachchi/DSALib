@@ -79,3 +79,35 @@ void printBin(double num)
 	}
 }
 
+/* ................. scrren print line ................*/
+
+#include <bitset>
+
+void drawLine(unsigned char screen[], int width, int x1, int x2, int y)
+{
+	unsigned char mask1 = ~0;
+	mask1 = mask1 >> (x1 % 8);
+
+	unsigned char mask2 = ~0;
+	mask2 = mask2 << (8 - (x2 % 8));
+
+	bitset<8> a(mask1);
+	bitset<8> b(mask2);
+
+	int startb = y*(width / 8) + (x1 / 8);
+	int endb = y*(width / 8) + (x2 / 8);
+
+	if (startb == endb)
+	{
+		screen[startb] = screen[startb] | (mask1 & mask2);
+	}
+	else
+	{
+		screen[startb] = screen[startb] | mask1;
+		screen[endb] = screen[endb] | mask2;
+		for (int i = startb + 1; i<endb; i++)
+		{
+			screen[i] = 0b11111111;
+		}
+	}
+}

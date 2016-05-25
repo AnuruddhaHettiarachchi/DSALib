@@ -136,3 +136,76 @@ int minStack::min() const
 		throw "Empty stack";
 	return valStack[iStack.top()];
 }
+
+/* ............ Cats and Dogs Shelter .............*/
+
+enum class AnimalType {
+	cat, dog
+};
+
+class Animal {
+public:
+	Animal(AnimalType t) : type(t) {}
+	AnimalType getType() { return type; }
+protected:
+	AnimalType type;
+};
+
+class Cat : public Animal {
+public:
+	Cat() : Animal(AnimalType::cat) {}
+};
+
+class Dog : public Animal {
+	Dog() : Animal(AnimalType::dog) {}
+};
+
+class Shelter {
+public:
+	void enqueue(Animal a);
+	Animal dequeueAny();
+	Cat dequeueCat();
+	Dog dequeueDog();
+private:
+	list<Animal> animals;
+	list<list<Animal>::iterator> catPts;
+	list<list<Animal>::iterator> dogPts;
+};
+
+void Shelter::enqueue(Animal a)
+{
+	list<Animal>::iterator i = animals.insert(animals.end(), a);
+	if (a.getType() == AnimalType::cat)
+		catPts.push_back(i);
+	else
+		dogPts.push_back(i);
+}
+
+Animal Shelter::dequeueAny()
+{
+	Animal a = animals.front();
+	if (a.getType() == AnimalType::cat)
+		catPts.pop_front();
+	else
+		dogPts.pop_front();
+	animals.pop_front();
+	return a;
+}
+
+Cat Shelter::dequeueCat()
+{
+	list<Animal>::iterator ci = catPts.front();
+	Cat c = *(static_cast<Cat*>(&*ci));
+	animals.erase(ci);
+	catPts.pop_front();
+	return c;
+}
+
+Dog Shelter::dequeueDog()
+{
+	list<Animal>::iterator di = dogPts.front();
+	Dog d = *(static_cast<Dog*>(&*di));
+	animals.erase(di);
+	dogPts.pop_front();
+	return d;
+}

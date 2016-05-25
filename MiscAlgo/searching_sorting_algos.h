@@ -27,3 +27,29 @@ void mergeArrays(vector<T>& a, vector<T>& b, unsigned int m, unsigned int n)
 		k--;
 	}
 }
+
+class Ranker {
+public:
+	void track(int);
+	int getRankOfNumber(int);
+private:
+	map<int, int> m;
+};
+
+void Ranker::track(int val)
+{
+	m[val]++;
+}
+
+int Ranker::getRankOfNumber(int num)
+{
+	int rank = 0;
+	map<int, int>::iterator i = m.begin();
+	while (i != m.end() && (*i).first < num)
+	{
+		rank += (*i).second;
+		i++;
+	}
+	rank += (m[num] - 1);
+	return rank;
+}

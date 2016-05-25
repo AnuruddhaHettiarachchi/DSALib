@@ -145,3 +145,59 @@ int numofParas(string exp, bool result)
 	}
 	return count;
 }
+
+/* ........... place queens on grid ..............*/
+int M, N;
+
+bool allowed(int i, int col, vector<int> place)
+{
+	for (int j = col - 1; j >= 0; j--)
+	{
+		if (place[j] == i ||
+			place[j] == i - (col - j) ||
+			place[j] == i + (col - j))
+			return false;
+	}
+	return true;
+}
+
+
+void printPath(vector<int> path)
+{
+	for (int i : path)
+	{
+		cout << i << " ";
+	}
+	cout << endl;
+}
+
+void placeRemainQueens(int col, int queen, vector<int> place)
+{
+	if (queen == M)
+	{
+		printPath(place);
+		return;
+	}
+	else if ((M - queen) <= (N - col))
+	{
+		//place
+		for (int i = 0; i<N; i++)
+		{
+			if (allowed(i, col, place))
+			{
+				vector<int> newPlace = place;
+				newPlace[col] = i;
+				placeRemainQueens(col + 1, queen + 1, newPlace);
+			}
+		}
+		//not place
+		placeRemainQueens(col + 1, queen, place);
+	}
+}
+
+void placeQueens(int _m, int _n)
+{
+	M = _m; N = _n;
+	vector<int> place(N, -10);
+	placeRemainQueens(0, 0, place);
+}
