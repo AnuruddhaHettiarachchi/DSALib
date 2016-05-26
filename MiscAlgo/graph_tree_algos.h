@@ -104,3 +104,45 @@ void printSumPath(const btree& tr, int sum)
 }
 
 */
+
+/* ............ check subtrees ...............
+
+typedef btree<int, int>::iterator node
+
+bool isSubtree(btree<int, int>& t1, btree<int, int>& t2)
+{
+	node r1 = t1.root(); 	//begin() is not the same as root() 
+	node r2 = t2.root();	//iterators traverse (operator++ operator--) in order
+
+	vector<node> t1nodes, t2nodes;
+
+	inorder(r1, t1nodes);
+	inorder(r2, t2nodes);
+
+	vector<node>::iterator t2nodesIt = t2nodes.begin();
+	for (node t1node : t1nodes)
+	{
+		if (node.key() == (*t2nodesIt).key())
+			t2nodesIt++;
+		else
+			t2nodesIt = t2nodes.begin();
+		if (t2nodesIt == t2nodes.end())
+			return true;
+	}
+	return false;
+}
+
+void inorder(btree<int, int>& tree, node& node, vector<node>& vec)
+{
+	if (node == tree.null())
+	{
+		vec.push_back(tree.null());
+		return;
+	}
+	inorder(tree, node.left(), vec);
+	vec.push_back(node);
+	inorder(tree, node.right(), vec);
+}
+
+*/
+

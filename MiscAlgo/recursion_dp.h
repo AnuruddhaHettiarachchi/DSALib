@@ -201,3 +201,21 @@ void placeQueens(int _m, int _n)
 	vector<int> place(N, -10);
 	placeRemainQueens(0, 0, place);
 }
+
+/* ............ coin picking ...................*/
+
+int coins[] = {1, 5, 10, 25};
+
+int pickCoins(int sum, int coin)
+{
+	if (sum == 0)
+		return 1;
+	if (coin > 3 || sum < coins[coin])
+		return 0;
+	int count = 0;
+	for (int i = 0; i*coins[coin] <= sum; i++)
+	{
+		count += pickCoins(sum - i*coins[coin], coin+1);
+	}
+	return count;
+}
