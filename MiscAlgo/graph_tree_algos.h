@@ -146,3 +146,31 @@ void inorder(btree<int, int>& tree, node& node, vector<node>& vec)
 
 */
 
+/* ..................... Common Ancestor
+typedef btree<T>::iterator node;
+
+node commonAncestor(btree<T>& tree, node p, node q)
+{
+	return getCommonAncestor(tree.root(), p, q);
+}
+
+node getCommonAncestor(btree<T>& tree, node& root, node& p, node& q)
+{
+	if (root == tree.null())
+		return tree.null();
+	if (root == p || root == q)
+		return root;
+
+	node l = getCommonAncestor(tree, root.left(), p, q);
+	node r = getCommonAncestor(tree, root.right(), p, q);
+
+	if (l == tree.null() && r == tree.null())
+		return tree.null();
+	if (l == tree.null())
+		return r;
+	if (r == tree.null())
+		return l;
+	return root;
+}
+
+*/

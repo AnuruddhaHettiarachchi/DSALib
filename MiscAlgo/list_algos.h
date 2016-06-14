@@ -2,6 +2,7 @@
 
 #include<unordered_map>
 #include<list>
+#include<stack>
 
 using namespace std;
 
@@ -48,4 +49,29 @@ void partition(list<int>& l, int x)
 		}
 		current++;
 	}
+}
+
+bool isPalindrome(list<int> l)
+{
+	stack<int> st;
+	list<int>::iterator it = l.begin();
+	int mid = l.size() / 2;
+
+	for (int i = 1; i <= mid; i++)
+	{
+		st.push(*it);
+		it++;
+	}
+
+	if (l.size() % 2 != 0)
+		it++;
+
+	while (it != l.end())
+	{
+		if (*it != st.top())
+			return false;
+		it++;
+		st.pop();
+	}
+	return true;
 }

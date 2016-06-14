@@ -102,3 +102,31 @@ void replaceSpace(string& str, int n)
 		}
 	}
 }
+
+
+void markRowCol(int** mat, int m, int n, int row, int col)
+{
+	for (int i = 0; i<m; i++)
+		mat[i][col] = 0;
+	for (int i = 0; i<n; i++)
+		mat[row][i] = 0;
+}
+
+void markZeros(int** mat, int m, int n)
+{
+	bool* cols = new bool[n];
+	for (int i = 0; i<m; i++)
+	{
+		for (int j = 0; j<n; j++)
+		{
+			if (!cols[j])
+				continue;
+			if (mat[i][j] == 0)
+			{
+				markRowCol(mat, m, n, i, j);
+				cols[j] = false;
+				break;
+			}
+		}
+	}
+}
